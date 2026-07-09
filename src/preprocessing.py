@@ -7,8 +7,11 @@ def load_data(file_name):
 
 def split_features_targets(data, target_data):
     x = data.drop(columns=["country_name","country_code",target_data])
+    feature_names = list(x.columns)
     y = data[target_data]
-    return x.values , y.values
+    y = y / 1000000000
+
+    return x.values , y.values,feature_names
 
 def z_score_normalization(x):
     mean = np.mean(x,axis=0)
