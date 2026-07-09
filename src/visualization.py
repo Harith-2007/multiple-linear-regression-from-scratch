@@ -19,7 +19,7 @@ def plot_cost_comparison(raw_cost_his,norm_cost_his,save=False):
     plt.show()
 
 def plot_data(x,y,feature_names,save=False):
-    figure,ax = plt.subplots(1,3,figsize=(12,3))
+    figure,ax = plt.subplots(1,4,figsize=(12,3))
     for i in range(x.shape[1]):
         ax[i].scatter(x[:, i], y)
         ax[i].set_title(f"{feature_names[i]} vs GDP")
