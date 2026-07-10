@@ -5,7 +5,7 @@ def plot_cost_comparison(raw_cost_his,norm_cost_his,save=False):
     raw_iterations=np.arange(len(raw_cost_his))
     norm_iterations=np.arange(len(norm_cost_his))
     figure,ax = plt.subplots(figsize=(12,3))
-    ax.plot(raw_iterations,raw_cost_his,label=f"raw_cos, iterations: {len(raw_cost_his)-1}")
+    ax.plot(raw_iterations,raw_cost_his,label=f"raw_cost, iterations: {len(raw_cost_his)-1}")
     ax.plot(norm_iterations,norm_cost_his,label=f"normalized_cost, iterations: {len(norm_cost_his)-1}")
     ax.set_title("Gradient Descent Convergence Comparison")
     ax.set_xlabel("Iterations")
