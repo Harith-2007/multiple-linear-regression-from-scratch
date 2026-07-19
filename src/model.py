@@ -57,10 +57,10 @@ def predict_gdp(mean, std, w, b):
     population = float(input("Enter population: "))*1000000
     trade_balance = exports - imports
     household_consumption= float(input("Enter household consumption (Billion USD): "))*1000000000
-    government_expidenture = float(input("Enter government expidenture (Billion USD): "))*1000000000
+    government_expenditure = float(input("Enter government expenditure (Billion USD): "))*1000000000
     gross_capital_formation = float(input("Enter gross capital formation (Billion USD): "))*1000000000
 
-    x = np.array([imports,exports,population,trade_balance,household_consumption,government_expidenture,gross_capital_formation])
+    x = np.array([imports,exports,population,household_consumption,government_expenditure,gross_capital_formation,trade_balance])
     x = (x - mean) / std
     prediction = predict(x.reshape(1, -1), w, b)
     print(f"\nPredicted GDP: {prediction[0]:.2f} Billion USD")

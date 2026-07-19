@@ -6,6 +6,7 @@ def load_data(file_name):
     return data
 
 def split_randomize_features_targets(data, target_column):
+    data = data.copy()
     data["trade_balance_usd"] = (data["exports_usd"] - data["imports_usd"])
     x = data.drop(columns=["country_name", "country_code", target_column])
     feature_names = list(x.columns)

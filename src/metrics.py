@@ -1,6 +1,6 @@
-import numpy as np
+
 import math
-from model import predict
+
 
 def compute_MSE(y,y_pred):
     m=len(y)
